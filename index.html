@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cédric Granata — Créateur de sites web</title>
+  <meta name="description" content="Cédric Granata, créateur de sites web à Six-Fours-les-Plages : je conçois des sites modernes qui inspirent confiance à vos clients. Découvrez mes réalisations et contactez-moi.">
+  <link rel="preload" href="fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/PlayfairDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/favicon-32.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cédric Granata — Créateur de sites web">
+  <meta property="og:title" content="Cédric Granata — Créateur de sites web">
+  <meta property="og:description" content="Cédric Granata, créateur de sites web à Six-Fours-les-Plages : je conçois des sites modernes qui inspirent confiance à vos clients. Découvrez mes réalisations et contactez-moi.">
+  <meta property="og:url" content="https://portfolio-three-silk-96.vercel.app/">
+  <meta property="og:image" content="https://portfolio-three-silk-96.vercel.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cédric Granata — Créateur de sites web">
+  <meta name="twitter:description" content="Créateur de sites web à Six-Fours-les-Plages : des sites professionnels qui inspirent confiance à vos clients.">
+  <meta name="twitter:image" content="https://portfolio-three-silk-96.vercel.app/assets/og-image.png">
+  <meta name="geo.region" content="FR-83">
+  <meta name="geo.placename" content="Six-Fours-les-Plages">
+  <meta name="geo.position" content="43.1124;5.8330">
+  <meta name="ICBM" content="43.1124, 5.8330">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <img src="assets/logo.svg" class="preloader__logo" alt="Logo Cédric Granata">
+      <div class="preloader__ring" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" class="logo__icon" alt="Logo Cédric Granata">
+        <span class="logo__text"><span id="cfgName">Votre Nom</span> <span class="grad">Portfolio</span></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link is-active">Accueil</a></li>
+          <li><a href="projets.html" class="nav__link">Projets</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="apropos.html" class="nav__link">À propos</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary nav__cta">Me contacter</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--3" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__tag"><span class="hero__tag-dot"></span> Disponible pour de nouveaux projets</p>
+          <h1 class="hero__title">Des sites web professionnels<br>qui <span class="grad">inspirent confiance</span></h1>
+          <p class="hero__text" id="cfgTagline">
+            Créateur de sites web à Six-Fours-les-Plages, j'accompagne les professionnels du Var :
+            site vitrine, réservation en ligne, référencement et mise en ligne.
+          </p>
+          <div class="hero__actions">
+            <a href="projets.html" class="btn btn--primary btn--lg">Voir mes réalisations</a>
+            <a href="contact.html" class="btn btn--ghost btn--lg">Contactez-moi</a>
+          </div>
+          <ul class="hero__points">
+            <li>Contact direct par e-mail ou téléphone</li>
+            <li>Sites 100 % responsives</li>
+            <li>Accompagnement jusqu'à la mise en ligne</li>
+          </ul>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__card">
+            <span class="hero__card-icon" aria-hidden="true">&#9881;</span>
+            <p class="hero__card-text" id="cfgRole">Votre projet<br>en de bonnes mains</p>
+            <p class="hero__card-sub">De l'idée à la mise en ligne</p>
+          </div>
+          <div class="hero__badge hero__badge--1">
+            <span class="hero__badge-num">100%</span>
+            <span class="hero__badge-label">satisfaction</span>
+          </div>
+          <div class="hero__badge hero__badge--2">
+            <span class="hero__badge-num" id="cfgInitialsBig">V</span>
+            <span class="hero__badge-label" id="cfgRoleSmall">créateur de sites</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Chiffres clés">
+      <div class="container stats__inner">
+        <div class="stat">
+          <span class="stat__num" data-count="2" data-prefix="">0</span>
+          <p class="stat__label">Sites livrés</p>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="100" data-suffix="%">0</span>
+          <p class="stat__label">Clients satisfaits</p>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="24" data-suffix="h">0</span>
+          <p class="stat__label">Délai de réponse</p>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="100" data-suffix="%">0</span>
+          <p class="stat__label">Responsive</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Site vitrine</span><i>&#10087;</i><span>Réservation en ligne</span><i>&#10087;</i><span>Référencement</span><i>&#10087;</i><span>Responsive</span><i>&#10087;</i><span>Mise en ligne</span><i>&#10087;</i><span>Maintenance</span><i>&#10087;</i><span>Accompagnement</span><i>&#10087;</i>
+        <span>Site vitrine</span><i>&#10087;</i><span>Réservation en ligne</span><i>&#10087;</i><span>Référencement</span><i>&#10087;</i><span>Responsive</span><i>&#10087;</i><span>Mise en ligne</span><i>&#10087;</i><span>Maintenance</span><i>&#10087;</i><span>Accompagnement</span><i>&#10087;</i>
+      </div>
+    </div>
+
+    <section class="section" id="projet">
+      <div class="container">
+        <div id="lastProject"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="reveal">
+          <p class="section__kicker">Mes services</p>
+          <h2 class="section__title">Des prestations claires pour votre activité</h2>
+          <p class="section__lead">Site vitrine, réservation en ligne, référencement : des sites conçus sur mesure, de la première idée jusqu'à la mise en ligne.</p>
+        </div>
+        <div class="services">
+          <div class="service-card reveal">
+            <span class="service-card__icon" aria-hidden="true">&#128722;</span>
+            <h3>Site vitrine</h3>
+            <p>Un site élégant et rapide pour présenter votre activité et convertir vos visiteurs en clients.</p>
+          </div>
+          <div class="service-card reveal">
+            <span class="service-card__icon" aria-hidden="true">&#128230;</span>
+            <h3>Réservation en ligne</h3>
+            <p>Vos clients choisissent leur créneau et réservent directement : vous gagnez du temps au quotidien.</p>
+          </div>
+          <div class="service-card reveal">
+            <span class="service-card__icon" aria-hidden="true">&#128736;</span>
+            <h3>Refonte &amp; maintenance</h3>
+            <p>Modernisation de votre site existant et suivi régulier après la mise en ligne.</p>
+          </div>
+        </div>
+        <div class="reveal text-center mt-2-2">
+          <a href="services.html" class="btn btn--ghost btn--lg">Voir tous mes services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="avis">
+      <div class="container">
+        <div class="reveal">
+          <p class="section__kicker">Témoignage client</p>
+          <h2 class="section__title">Ils me recommandent</h2>
+          <p class="section__lead">Ce que mes clients disent de mon travail.</p>
+        </div>
+        <div class="testimonials">
+          <figure class="testimonial reveal">
+            <div class="testimonial__stars" aria-label="5 étoiles">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>J'ai fait appel à Cédric pour mon site de réflexologie plantaire et je ne regrette pas du tout. Il a tout de suite compris mon univers, sans que j'aie besoin de trop expliquer. Le site est vraiment beau, simple à naviguer, et surtout il correspond exactement à l'image que je voulais donner. Il a été patient avec toutes mes demandes (et j'en ai eu pas mal !), toujours à l'écoute. Je le recommande à 100%.</blockquote>
+            <figcaption><b>Monica E.</b><span>Site Monina Reflexio Zen</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta__inner">
+        <div>
+          <p class="cta__kicker">Contact direct</p>
+          <h2 class="cta__title">Parlons de votre projet</h2>
+          <p class="cta__text">Décrivez votre activité en quelques lignes : on en parle par e-mail ou par téléphone, et je vous réponds sous 24h.</p>
+        </div>
+        <div class="cta__actions">
+          <a href="contact.html" class="btn btn--primary btn--lg">Contactez-moi</a>
+          <a href="projets.html" class="btn btn--ghost btn--lg">Voir mes réalisations</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand"><span id="cfgNameFooter">Votre Nom</span> · Portfolio</p>
+      <nav class="footer__nav" aria-label="Navigation pied de page">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="services.html">Services</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer__legal">&copy; <span id="annee"></span> — Tous droits réservés. &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+    </div>
+  </footer>
+
+  <a href="contact.html" class="contact-float" aria-label="Me contacter">
+    <span class="contact-float__icon" aria-hidden="true">&#9993;</span>
+    <span class="contact-float__label">Prêt à concevoir votre site</span>
+  </a>
+
+  <button class="back-top" id="backTop" aria-label="Revenir en haut de page" hidden>&#8593;</button>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/projects.js?v=2" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
