@@ -1,0 +1,12 @@
+*.bak
+*.pid
+*.txt
+Lancer-le-portfolio.bat
+serveur.ps1
+.tiktok/
+tiktok/
+*.zip
+*.mp4
+.env.local.bak
+.vercelignore
+.gitignore

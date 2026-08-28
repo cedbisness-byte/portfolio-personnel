@@ -1,0 +1,8 @@
+# Fichiers serveur local inutiles en ligne
+serveur.ps1
+Lancer-le-portfolio.bat
+port.txt
+pid.txt
+
+# Dossiers Vercel locaux
+.vercel

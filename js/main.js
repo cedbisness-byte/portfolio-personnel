@@ -27,6 +27,10 @@
   if (mailLink && CFG.email) { mailLink.href = 'mailto:' + CFG.email; }
   var telLink = document.getElementById('cfgPhoneLink');
   if (telLink && CFG.phone) { telLink.href = 'tel:' + CFG.phone.replace(/\s+/g, ''); }
+  var bookingLink = document.getElementById('cfgBookingLink');
+  if (bookingLink && CFG.bookingUrl) { bookingLink.href = CFG.bookingUrl; }
+  var bookingLabel = document.getElementById('cfgBookingLabel');
+  if (bookingLabel && CFG.bookingLabel) { bookingLabel.textContent = CFG.bookingLabel; }
 
   // ---------- Menu mobile ----------
   var navToggle = document.getElementById('navToggle');
@@ -76,12 +80,26 @@
   function hidePreloader() {
     if (preloader) { preloader.classList.add('is-hidden'); }
   }
-  if (document.readyState === 'complete') {
-    setTimeout(hidePreloader, 300);
+  var preloaderShown = false;
+  try { preloaderShown = window.sessionStorage.getItem('granataPreloader') === '1'; } catch (e) {}
+  if (preloaderShown) {
+    hidePreloader();
   } else {
-    window.addEventListener('load', function () { setTimeout(hidePreloader, 300); });
+    var preloadMin = 2300;
+    var preloadStart = Date.now();
+    function hidePreloaderWhenReady() {
+      var elapsed = Date.now() - preloadStart;
+      var wait = Math.max(0, preloadMin - elapsed);
+      setTimeout(hidePreloader, wait);
+    }
+    if (document.readyState === 'complete') {
+      hidePreloaderWhenReady();
+    } else {
+      window.addEventListener('load', hidePreloaderWhenReady);
+    }
+    setTimeout(hidePreloader, preloadMin + 2500);
+    try { window.sessionStorage.setItem('granataPreloader', '1'); } catch (e) {}
   }
-  setTimeout(hidePreloader, 2500);
 
   // ---------- Compteurs ----------
   function animateCount(el) {
@@ -262,39 +280,31 @@
   var modalOpen = document.getElementById('modalOpen');
 
   function setModalPreview(project) {
-    if (liveMode && modalFrame) {
-      modalFrame.src = project.url;
-      modalFrame.classList.remove('hidden');
-      if (modalShot) { modalShot.classList.add('hidden'); }
-      if (modalGallery) { modalGallery.classList.add('hidden'); }
-      if (modalUrl) { modalUrl.textContent = project.url; }
-    } else {
-      var shots = project.shots || [];
-      var current = shots.length ? shots[0] : '';
-      if (modalFrame) { modalFrame.classList.add('hidden'); }
-      if (modalShot) {
-        modalShot.innerHTML = current ? '<img src="' + esc(current) + '" alt="Aperçu de ' + esc(project.name) + '">' : '';
-        modalShot.classList.remove('hidden');
-      }
-      if (modalGallery) {
-        if (shots.length > 1) {
-          modalGallery.classList.remove('hidden');
-        } else {
-          modalGallery.classList.add('hidden');
-        }
-        modalGallery.innerHTML = shots.map(function (s, i) {
-          return '<img src="' + esc(s) + '" alt="Page ' + (i + 1) + '" class="' + (i === 0 ? 'is-active' : '') + '" data-src="' + esc(s) + '">';
-        }).join('');
-        modalGallery.querySelectorAll('img').forEach(function (img) {
-          img.addEventListener('click', function () {
-            modalShot.querySelector('img').src = img.getAttribute('data-src');
-            modalGallery.querySelectorAll('img').forEach(function (g) { g.classList.remove('is-active'); });
-            img.classList.add('is-active');
-          });
-        });
-      }
-      if (modalUrl) { modalUrl.textContent = current || project.url; }
+    var shots = project.shots || [];
+    var current = shots.length ? shots[0] : '';
+    if (modalFrame) { modalFrame.classList.add('hidden'); modalFrame.src = 'about:blank'; }
+    if (modalShot) {
+      modalShot.innerHTML = current ? '<img src="' + esc(current) + '" alt="Aperçu de ' + esc(project.name) + '">' : '';
+      modalShot.classList.remove('hidden');
     }
+    if (modalGallery) {
+      if (shots.length > 1) {
+        modalGallery.classList.remove('hidden');
+      } else {
+        modalGallery.classList.add('hidden');
+      }
+      modalGallery.innerHTML = shots.map(function (s, i) {
+        return '<img src="' + esc(s) + '" alt="Page ' + (i + 1) + '" class="' + (i === 0 ? 'is-active' : '') + '" data-src="' + esc(s) + '">';
+      }).join('');
+      modalGallery.querySelectorAll('img').forEach(function (img) {
+        img.addEventListener('click', function () {
+          modalShot.querySelector('img').src = img.getAttribute('data-src');
+          modalGallery.querySelectorAll('img').forEach(function (g) { g.classList.remove('is-active'); });
+          img.classList.add('is-active');
+        });
+      });
+    }
+    if (modalUrl) { modalUrl.textContent = current || project.url; }
   }
 
   function openModal(index) {
@@ -333,5 +343,54 @@
   // ---------- Résolution des images de fond (data-bg) ----------
   document.querySelectorAll('[data-bg]').forEach(function (el) {
     el.style.backgroundImage = 'url(' + el.getAttribute('data-bg') + ')';
+  });
+
+  // ---------- Formulaire de contact (Formspree) ----------
+  document.querySelectorAll('.contact-form').forEach(function (form) {
+    var status = form.querySelector('.contact-form__status');
+    var btn = form.querySelector('[type=submit]');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var nom = (form.querySelector('[name=nom]') || {}).value || '';
+      var email = (form.querySelector('[name=email]') || {}).value || '';
+      var sujet = (form.querySelector('[name=sujet]') || {}).value || '';
+      var message = (form.querySelector('[name=message]') || {}).value || '';
+      if (!email || !message) {
+        if (status) {
+          status.textContent = 'Merci de remplir au moins votre e-mail et votre message.';
+          status.classList.add('is-error');
+        }
+        return;
+      }
+      var endpoint = CFG.formEndpoint || '';
+      if (!endpoint) {
+        if (status) {
+          status.textContent = 'Configuration du formulaire manquante. Vous pouvez m\'écrire directement à ' + (CFG.email || '');
+          status.classList.add('is-error');
+        }
+        return;
+      }
+      var payload = {
+        nom: nom, email: email, sujet: sujet, message: message,
+        _subject: 'Nouvelle demande depuis le portfolio'
+      };
+      if (btn) { btn.disabled = true; btn.textContent = 'Envoi en cours…'; }
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (res) {
+        if (res.ok) {
+          if (status) { status.textContent = 'Merci ! Votre message a bien été envoyé, je vous réponds sous 24h.'; status.classList.add('is-success'); }
+          form.reset();
+        } else {
+          if (status) { status.textContent = 'Une erreur est survenue. Vous pouvez m\'écrire directement à ' + (CFG.email || ''); status.classList.add('is-error'); }
+        }
+      }).catch(function () {
+        if (status) { status.textContent = 'Une erreur est survenue. Vous pouvez m\'écrire directement à ' + (CFG.email || ''); status.classList.add('is-error'); }
+      }).finally(function () {
+        if (btn) { btn.disabled = false; btn.textContent = 'Envoyer ma demande'; }
+      });
+    });
   });
 })();

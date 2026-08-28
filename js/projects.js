@@ -3,6 +3,35 @@
 
 window.PORTFOLIO_PROJECTS = [
   {
+    id: 'reflexio-zen',
+    categorie: 'reel',
+    name: 'Reflexio Zen',
+    kicker: 'Site vitrine · Réflexologie',
+    url: 'https://reflexio-zen-v2.vercel.app',
+    shots: [
+      'assets/screenshots/reflexologie-zen.png',
+      'assets/screenshots/reflexologie-zen-prestations.png',
+      'assets/screenshots/reflexologie-zen-bienfaits.png',
+      'assets/screenshots/reflexologie-zen-rdv.png',
+      'assets/screenshots/reflexologie-zen-apropos.png',
+      'assets/screenshots/reflexologie-zen-contact.png'
+    ],
+    tagline: 'Le site en ligne de Monica Estevez, réflexologue à Six-Fours-les-Plages : prise de rendez-vous et présentation des séances.',
+    description:
+      'Création du site vitrine réel de Reflexio Zen, le cabinet de réflexologie de Monica Estevez. Un site apaisant qui présente les séances, les bienfaits de la réflexologie et permet aux visiteurs de prendre rendez-vous facilement.',
+    details: [
+      'Site multi-pages : Accueil, Prestations, Bienfaits, À propos, Contact, Mentions légales, Politique de confidentialité',
+      'Design zen et chaleureux aux couleurs naturelles (verts & dorés)',
+      'Mise en avant des bienfaits et des différents soins proposés',
+      'Prise de rendez-vous simple (téléphone, e-mail, WhatsApp)',
+      'Pages juridiques complètes (Mentions légales, Politique de confidentialité)',
+      '100 % responsive et optimisé pour le référencement'
+    ],
+    techs: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'SEO'],
+    client: 'Reflexio Zen — Six-Fours-les-Plages',
+    year: '2026'
+  },
+  {
     id: 'centre-dentaire-hermes',
     categorie: 'fictif',
     name: 'Centre Dentaire Hermès',
@@ -123,6 +152,34 @@ window.PORTFOLIO_PROJECTS = [
     ],
     techs: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'SEO'],
     client: 'Seasun Immobilier — Six-Fours-les-Plages (proposition)',
+    year: '2026'
+  },
+  {
+    id: 'csm-expertise-sante',
+    categorie: 'reel',
+    name: 'CSM Expertise Santé',
+    kicker: 'Site vitrine · Santé & expertise',
+    url: 'https://csm-expertise-sante.vercel.app',
+    shots: [
+      'assets/screenshots/csm-expertise-sante.png',
+      'assets/screenshots/csm-expertise-sante-prestations.png',
+      'assets/screenshots/csm-expertise-sante-contact.png',
+      'assets/screenshots/csm-expertise-sante-mentions.png',
+      'assets/screenshots/csm-expertise-sante-politique.png'
+    ],
+    tagline: 'Le site de l\'expertise santé : présentation des prestations, de la structure et contacts directs.',
+    description:
+      'Création du site vitrine réel de CSM Expertise Santé : une présentation claire et rassurante des prestations d\'expertise, des informations de contact directes et des pages juridiques conformes.',
+    details: [
+      'Site multi-pages : Accueil, Prestations, Contact, Mentions légales, Politique de confidentialité',
+      'Design professionnel et sobre, axé sur la confiance',
+      'Liens de contact directs (e-mail et téléphone) en un clic',
+      'Boutons d\'appel & e-mail accessibles sur mobile',
+      'Pages juridiques complètes',
+      '100 % responsive et optimisé pour le référencement'
+    ],
+    techs: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'SEO'],
+    client: 'CSM Expertise Santé',
     year: '2026'
   },
 ];
