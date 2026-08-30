@@ -7,16 +7,16 @@
 
 window.PORTFOLIO_CONFIG = {
   // Identité
-  name: 'Test Admin', // Nom et prénom
-  initials: 'G', // Lettre(s) affichée(s) dans le logo / monogramme
-  role: 'b', // Métier
-  tagline: '.',
+  name: 'Cédric Granata', // Nom et prénom
+  initials: 'CG', // Lettre(s) affichée(s) dans le logo / monogramme
+  role: 'Concepteur de sites web', // Métier
+  tagline: 'Je conçois des sites web sur mesure pour les artisans, professions libérales et commerçants du Var : vitrine, e-commerce, réservation en ligne et référencement, de l\'idée jusqu\'à la mise en ligne.',
 
   // Contact
-  email: 'm', // Email de réception (formulaire de contact)
-  phone: '4', // Téléphone
-  city: 's', // Ville / région
-  availability: '.',
+  email: 'granatacedric@gmail.com', // Email de réception (formulaire de contact)
+  phone: '+33 7 61 87 53 44', // Téléphone
+  city: 'Six-Fours-les-Plages', // Ville / région
+  availability: 'Réponse sous 24h ouvrées, 7j/7 pour les projets urgents.',
 
   // Prise de rendez-vous (Calendly)
   // Lien public de ton type de réunion Calendly — ouvre dans un nouvel onglet.
