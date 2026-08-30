@@ -62,6 +62,7 @@
       }
     },
     { "handle": "filesystem" },
+    { "src": "/api/(.*)", "dest": "/(.*)" },
     { "src": "/(.*)", "status": 404, "dest": "/index.html" }
   ]
 }

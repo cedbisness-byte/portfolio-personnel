@@ -47,14 +47,13 @@ export default async function handler(req, res) {
 // Extrait les champs éditables du contenu config.js sous forme d'objet
 function extractConfig(content) {
   const get = (key) => {
-    // match window.PORTFOLIO_CONFIG = { ... key: 'valeur' ... }
-    const re = new RegExp(`${key}\\s*:\\s*('([^'\\\\]|\\\\.)*'|"([^"\\\\]|\\\\.)*")`, 'g');
+    // Capturer la valeur de : key: '...'  (en gérant les apostrophes échappées \')
+    // Pattern: key: '  (contenu dont apostrophes échappées)  '
+    const marker = `${key}\\s*:\\s*`;
+    const re = new RegExp(`${marker}'((?:[^'\\\\]|\\\\.)*)'`);
     const m = re.exec(content);
     if (!m) return '';
-    // m[2] ou m[3] selon guillemets
-    const raw = m[2] !== undefined ? m[2] : m[3];
-    // Déséchapper les apostrophes \' -> '
-    return raw.replace(/\\'/g, "'").replace(/\\"/g, '"');
+    return m[1].replace(/\\'/g, "'").replace(/\\\\/g, '\\');
   };
 
   return {
