@@ -15,7 +15,7 @@ window.PORTFOLIO_CONFIG = {
   // Contact
   email: 'granatacedric@gmail.com', // Email de réception (formulaire de contact)
   phone: '+33 7 61 87 53 44', // Téléphone
-  city: 'La Garde (avec accents é à ô)', // Ville / région
+  city: 'Six-Fours-les-Plages', // Ville / région
   availability: 'Réponse sous 24h ouvrées, 7j/7 pour les projets urgents.',
 
   // Prise de rendez-vous (Calendly)
