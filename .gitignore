@@ -10,3 +10,5 @@ tiktok/
 .env.local.bak
 .vercelignore
 .gitignore
+.vercel
+.env*

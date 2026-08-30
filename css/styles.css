@@ -329,6 +329,17 @@ img.logo__icon {
   0%, 88%, 100% { opacity: 0.2; transform: rotate(0deg); }
   93% { opacity: 0.85; transform: rotate(90deg); }
 }
+.hero__portrait { position: relative; }
+.hero__portrait::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  pointer-events: none; z-index: 2;
+  background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,0.22) 50%, transparent 58%);
+  background-size: 250% 100%; background-position: -250% 0;
+  animation: flashSweep 6s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+.hero__portrait-img { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.hero__portrait:hover .hero__portrait-img { transform: scale(1.04); }
 .hero__badge {
   position: absolute; background: var(--surface-2); border: 1px solid var(--border);
   border-radius: 12px; padding: 0.55rem 0.9rem;
@@ -903,6 +914,55 @@ img.logo__icon {
   .contact-form__row { grid-template-columns: 1fr; }
   .booking__card { padding: 2.4rem 1.4rem; }
 }
+
+/* ---------- Effets "flash" sur les images ---------- */
+.project__shot { position: relative; }
+.project__shot::after,
+.about-page__visual::after,
+.modal__shot::after {
+  content: ''; position: absolute; inset: 0; overflow: hidden;
+  pointer-events: none; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+  background-size: 250% 100%; background-position: -250% 0;
+  animation: flashSweep 5.5s ease-in-out infinite;
+  mix-blend-mode: screen; z-index: 2;
+}
+.project__shot:hover::after,
+.about-page__visual:hover::after,
+.modal__shot:hover::after {
+  animation: flashSweep 1.6s ease-in-out infinite;
+  background-position: 250% 0;
+}
+@keyframes flashSweep {
+  0% { background-position: -250% 0; }
+  55% { background-position: 250% 0; }
+  100% { background-position: 250% 0; }
+}
+.project__shot img, .about-page__img, .modal__shot img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.7s ease;
+}
+.project:hover .project__shot img, .about-page__visual:hover .about-page__img, .modal__shot:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.12) saturate(1.08);
+}
+.project:hover .project__shot, .about-page__visual:hover, .modal__shot:hover {
+  box-shadow: 0 0 0 1px rgba(217,185,106,0.35), 0 18px 40px -12px rgba(217,185,106,0.28), var(--shadow-lg);
+}
+.service-card__icon {
+  position: relative; transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.service-card:hover .service-card__icon {
+  transform: scale(1.15) rotate(-6deg);
+  box-shadow: 0 0 18px 2px rgba(217,185,106,0.45);
+}
+.service-card__icon::after {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  width: 8px; height: 8px; border-radius: 50%;
+  margin: -4px 0 0 -4px;
+  background: var(--accent); opacity: 0; filter: blur(1px);
+  box-shadow: 0 0 10px 4px var(--accent);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.service-card__icon:hover::after { opacity: 1; transform: scale(2.2); }
 
 /* ---------- Effets "wow" supplémentaires ---------- */
 .hero__orb { position: absolute; border-radius: 50%; filter: blur(40px); z-index: 0; opacity: 0.5; pointer-events: none; }
