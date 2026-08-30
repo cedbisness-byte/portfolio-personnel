@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Administration — Cédric Granata</title>
+  <link rel="stylesheet" href="css/styles.css?v=12">
+  <style>
+    body.admin { background: #121510; color: #f2efe8; font-family: Arial, sans-serif; margin: 0; }
+    .admin-wrap { max-width: 720px; margin: 3rem auto; padding: 0 1.2rem; }
+    .admin-card { background: #1a1d18; border: 1px solid #2a2d26; border-radius: 16px; padding: 1.8rem; margin-bottom: 1.4rem; }
+    .admin-card h1 { font-size: 1.5rem; margin: 0 0 0.4rem; }
+    .admin-card .sub { color: #9a9d92; font-size: 0.9rem; margin: 0 0 1.4rem; }
+    .admin-field { margin-bottom: 1rem; }
+    .admin-field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: #d9b96a; }
+    .admin-field input, .admin-field textarea {
+      width: 100%; padding: 0.65rem 0.8rem; border-radius: 8px;
+      border: 1px solid #2a2d26; background: #0d0f0c; color: inherit;
+      font-size: 0.95rem; box-sizing: border-box; font-family: inherit;
+    }
+    .admin-field textarea { resize: vertical; min-height: 70px; }
+    .admin-actions { display: flex; gap: 0.8rem; margin-top: 1.4rem; flex-wrap: wrap; }
+    .admin-msg { margin-top: 1rem; padding: 0.7rem; border-radius: 8px; font-size: 0.9rem; display: none; }
+    .admin-msg.ok { display: block; background: rgba(46,160,67,.12); border: 1px solid #2ea043; color: #7ee2a8; }
+    .admin-msg.err { display: block; background: rgba(248,81,73,.12); border: 1px solid #d73a49; color: #ffb3ab; }
+    .hidden { display: none; }
+    .btn--primary { background: #d9b96a; color: #121510; border: none; border-radius: 8px; padding: 0.7rem 1.2rem; font-weight: 700; cursor: pointer; }
+    .btn--ghost { background: transparent; color: inherit; border: 1px solid #2a2d26; border-radius: 8px; padding: 0.7rem 1.2rem; cursor: pointer; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.8rem; }
+    .stat { background: #0d0f0c; border: 1px solid #2a2d26; border-radius: 12px; padding: 1rem; text-align: center; }
+    .stat .num { font-size: 1.8rem; font-weight: 800; color: #d9b96a; }
+    .stat .lbl { font-size: 0.75rem; color: #9a9d92; margin-top: 0.2rem; }
+    .admin-badge { display: inline-block; background: rgba(217,185,106,.15); color: #d9b96a; border: 1px solid rgba(217,185,106,.4); border-radius: 20px; padding: 0.25rem 0.8rem; font-size: 0.75rem; margin-bottom: 1rem; }
+    .admin-hint { font-size: 0.8rem; color: #9a9d92; margin-top: 0.8rem; }
+    .stat-note { font-size: 0.78rem; color: #9a9d92; margin-top: 0.6rem; }
+    .link-plain { color: #d9b96a; }
+  </style>
+</head>
+<body class="admin">
+  <div class="admin-wrap">
+
+    <!-- Écran de connexion -->
+    <div class="admin-card" id="loginScreen">
+      <h1>Administration du site</h1>
+      <p class="sub">Espace privé réservé au propriétaire. Les visiteurs n'y ont pas accès.</p>
+      <form id="loginForm" autocomplete="off">
+        <div class="admin-field">
+          <label>Mot de passe</label>
+          <input type="password" id="adminPassword" placeholder="Votre mot de passe" autofocus>
+        </div>
+        <div class="admin-actions">
+          <button type="submit" class="btn--primary">Se connecter</button>
+        </div>
+      </form>
+      <div class="admin-msg" id="loginMsg"></div>
+    </div>
+
+    <!-- Écran d'édition -->
+    <div class="admin-card hidden" id="editScreen">
+      <span class="admin-badge">Espace créateur (privé)</span>
+      <h1>Modifier mes informations</h1>
+      <p class="sub">Remplissez les champs puis cliquez sur « Enregistrer ». Le site en ligne se met à jour automatiquement.</p>
+
+      <div class="admin-field">
+        <label>Nom et prénom</label>
+        <input type="text" id="fName">
+      </div>
+      <div class="admin-field">
+        <label>Initiales (logo)</label>
+        <input type="text" id="fInitials" maxlength="3">
+      </div>
+      <div class="admin-field">
+        <label>Métier / fonction</label>
+        <input type="text" id="fRole">
+      </div>
+      <div class="admin-field">
+        <label>Phrase d'accroche (sous « Bonjour, je suis »)</label>
+        <textarea id="fTagline"></textarea>
+      </div>
+      <div class="admin-field">
+        <label>E-mail</label>
+        <input type="email" id="fEmail">
+      </div>
+      <div class="admin-field">
+        <label>Téléphone</label>
+        <input type="text" id="fPhone">
+      </div>
+      <div class="admin-field">
+        <label>Ville</label>
+        <input type="text" id="fCity">
+      </div>
+      <div class="admin-field">
+        <label>Disponibilité</label>
+        <input type="text" id="fAvailability">
+      </div>
+
+      <div class="admin-actions">
+        <button type="button" class="btn--primary" id="btnSave">Enregistrer</button>
+        <button type="button" class="btn--ghost" id="btnLogout">Se déconnecter</button>
+      </div>
+      <div class="admin-msg" id="editMsg"></div>
+    </div>
+
+    <!-- Écran trafic -->
+    <div class="admin-card hidden" id="statsScreen">
+      <span class="admin-badge">Statistiques de trafic</span>
+      <h1>Fréquentation du site</h1>
+      <p class="sub">Nombre de visites et de visiteurs uniques enregistrés (anonyme, sans cookies).</p>
+
+      <div class="stats-grid">
+        <div class="stat"><div class="num" id="statTotal">—</div><div class="lbl">Total visites</div></div>
+        <div class="stat"><div class="num" id="statYesterday">—</div><div class="lbl">Hier</div></div>
+        <div class="stat"><div class="num" id="statToday">—</div><div class="lbl">Aujourd'hui</div></div>
+      </div>
+      <p class="stat-note" id="statsNote"></p>
+    </div>
+
+  </div>
+
+  <script>
+    // Mot de passe mémorisé dans la session (sans stockage, juste mémoire)
+    var sessionPwd = null;
+
+    function isLocal() {
+      return location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    }
+
+    var msg = function (el, type, text) {
+      el.className = 'admin-msg ' + type;
+      el.textContent = text;
+    };
+
+    // ---------- Connexion ----------
+    var loginForm = document.getElementById('loginForm');
+    var loginMsg = document.getElementById('loginMsg');
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var pwd = document.getElementById('adminPassword').value;
+      if (isLocal()) {
+        // En local sans backend, on passe en aperçu
+        sessionPwd = pwd;
+        showEditor();
+        msg(loginMsg, 'ok', 'Aperçu local (le backend ne tourne qu\'en ligne).');
+        return;
+      }
+      fetch('/api/check-auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pwd })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.ok) { sessionPwd = pwd; loginMsg.className = 'admin-msg'; showEditor(); }
+          else { msg(loginMsg, 'err', data.error || 'Mot de passe incorrect.'); }
+        })
+        .catch(function () { msg(loginMsg, 'err', 'Erreur de connexion au serveur.'); });
+    });
+
+    // ---------- Affichage de l'éditeur ----------
+    function showEditor() {
+      document.getElementById('loginScreen').classList.add('hidden');
+      document.getElementById('editScreen').classList.remove('hidden');
+      document.getElementById('statsScreen').classList.remove('hidden');
+      loadConfig();
+      loadStats();
+    }
+
+    // ---------- Charger la config ----------
+    var editMsg = document.getElementById('editMsg');
+    function loadConfig() {
+      if (isLocal()) return; // pas de backend en local
+      fetch('/api/get-config')
+        .then(function (r) { return r.json(); })
+        .then(function (cfg) {
+          if (!cfg.ok) return;
+          document.getElementById('fName').value = cfg.name || '';
+          document.getElementById('fInitials').value = cfg.initials || '';
+          document.getElementById('fRole').value = cfg.role || '';
+          document.getElementById('fTagline').value = cfg.tagline || '';
+          document.getElementById('fEmail').value = cfg.email || '';
+          document.getElementById('fPhone').value = cfg.phone || '';
+          document.getElementById('fCity').value = cfg.city || '';
+          document.getElementById('fAvailability').value = cfg.availability || '';
+        })
+        .catch(function () {});
+    }
+
+    // ---------- Enregistrer ----------
+    document.getElementById('btnSave').addEventListener('click', function () {
+      if (isLocal()) {
+        msg(editMsg, 'ok', 'Aperçu local : l\'enregistrement fonctionnera une fois le site en ligne.');
+        return;
+      }
+      var payload = {
+        password: sessionPwd,
+        values: {
+          name: document.getElementById('fName').value,
+          initials: document.getElementById('fInitials').value,
+          role: document.getElementById('fRole').value,
+          tagline: document.getElementById('fTagline').value,
+          email: document.getElementById('fEmail').value,
+          phone: document.getElementById('fPhone').value,
+          city: document.getElementById('fCity').value,
+          availability: document.getElementById('fAvailability').value
+        }
+      };
+      var btn = document.getElementById('btnSave');
+      btn.disabled = true; btn.textContent = 'Enregistrement…';
+      fetch('/api/save-config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.ok) msg(editMsg, 'ok', data.message);
+          else msg(editMsg, 'err', data.error || 'Erreur inconnue.');
+        })
+        .catch(function () { msg(editMsg, 'err', 'Erreur réseau.'); })
+        .finally(function () { btn.disabled = false; btn.textContent = 'Enregistrer'; });
+    });
+
+    document.getElementById('btnLogout').addEventListener('click', function () {
+      sessionPwd = null;
+      document.getElementById('editScreen').classList.add('hidden');
+      document.getElementById('statsScreen').classList.add('hidden');
+      document.getElementById('loginScreen').classList.remove('hidden');
+      document.getElementById('adminPassword').value = '';
+    });
+
+    // ---------- Statistiques de trafic (compteur intégré) ----------
+    function loadStats() {
+      var note = document.getElementById('statsNote');
+      if (isLocal()) { note.textContent = 'Les statistiques s\'affichent une fois le site en ligne.'; return; }
+      fetch('/api/get-stats')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d.ok) { note.textContent = d.error || 'Impossible de charger les statistiques.'; return; }
+          document.getElementById('statTotal').textContent = d.total;
+          document.getElementById('statYesterday').textContent = d.yesterday;
+          document.getElementById('statToday').textContent = d.today;
+          note.textContent = 'Compteur intégré au site (anonyme, sans cookie). La 1ère visite s\'enregistre au déploiement.';
+        })
+        .catch(function () { note.textContent = 'Impossible de charger les statistiques.'; });
+    }
+  </script>
+</body>
+</html>

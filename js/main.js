@@ -4,6 +4,20 @@
   var CFG = window.PORTFOLIO_CONFIG || {};
   var liveMode = location.protocol === 'http:' || location.protocol === 'https:';
 
+  // ---------- Compteur de trafic (anonyme, sans cookie) ----------
+  // Compte chaque visite du site (une par session / 30s max) sauf sur la page admin.
+  (function (path) {
+    if (!liveMode) return; // pas de comptage en local
+    if (/\/admin(\.html)?$/.test(path)) return; // ne compte pas la page admin
+    var key = 'pv_last_' + path;
+    var now = Date.now();
+    var last = 0;
+    try { last = parseInt(localStorage.getItem(key), 10) || 0; } catch (e) {}
+    if (now - last < 30000) return; // évite les doubles comptages rapides
+    try { localStorage.setItem(key, String(now)); } catch (e) {}
+    fetch('/api/track-hit', { method: 'POST', keepalive: true }).catch(function () {});
+  })(location.pathname);
+
   // ---------- Injection des infos personnelles (config.js) ----------
   function bind(id, value) {
     var el = document.getElementById(id);
