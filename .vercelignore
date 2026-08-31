@@ -6,3 +6,6 @@ pid.txt
 
 # Dossiers Vercel locaux
 .vercel
+
+# Dossiers de travail des projets clients (archives, pas servis en ligne)
+projects/

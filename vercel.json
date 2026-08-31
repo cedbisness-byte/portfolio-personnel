@@ -29,7 +29,7 @@
       "src": "/projects/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=86400, must-revalidate",
-        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formspree.io; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://www.google.com https://www.google.com/maps; upgrade-insecure-requests; report-to csp-endpoint; report-uri /api/csp-report",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formspree.io; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://www.google.com https://www.google.com/maps; upgrade-insecure-requests",
         "Reporting-Endpoints": "csp-endpoint=\"/api/csp-report\"",
         "X-Frame-Options": "DENY",
         "X-Content-Type-Options": "nosniff",
@@ -45,7 +45,7 @@
     {
       "src": "/(.*)",
       "headers": {
-        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formspree.io; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://www.google.com https://www.google.com/maps; upgrade-insecure-requests; report-to csp-endpoint; report-uri /api/csp-report",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formspree.io; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://www.google.com https://www.google.com/maps; upgrade-insecure-requests",
         "Reporting-Endpoints": "csp-endpoint=\"/api/csp-report\"",
         "X-Frame-Options": "DENY",
         "X-Content-Type-Options": "nosniff",
@@ -55,14 +55,13 @@
         "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
         "Cross-Origin-Opener-Policy": "same-origin",
         "X-DNS-Prefetch-Control": "on",
-        "Access-Control-Allow-Origin": "https://portfolio-three-silk-96.vercel.app",
+        "Access-Control-Allow-Origin": "https://portfolio-personnel-tau.vercel.app",
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Vary": "Origin",
         "Cache-Control": "public, max-age=0, must-revalidate"
       }
     },
-    { "handle": "filesystem" },
-    { "src": "/api/(.*)", "dest": "/(.*)" },
+    { "handle": "filesystem" },
     { "src": "/(.*)", "status": 404, "dest": "/index.html" }
   ]
 }

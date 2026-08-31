@@ -2,8 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover, user-scalable=no">
   <title>Cédric Granata — Concepteur de sites web</title>
+  <link rel="canonical" href="https://portfolio-personnel-tau.vercel.app/">
   <meta name="description" content="Cédric Granata, concepteur de sites web à Six-Fours-les-Plages : je conçois des sites modernes qui inspirent confiance à vos clients. Découvrez mes réalisations et contactez-moi.">
   <link rel="preload" href="fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/PlayfairDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -15,25 +16,42 @@
   <meta property="og:site_name" content="Cédric Granata — Concepteur de sites web">
   <meta property="og:title" content="Cédric Granata — Concepteur de sites web">
   <meta property="og:description" content="Cédric Granata, concepteur de sites web à Six-Fours-les-Plages : je conçois des sites modernes qui inspirent confiance à vos clients. Découvrez mes réalisations et contactez-moi.">
-  <meta property="og:url" content="https://portfolio-three-silk-96.vercel.app/">
-  <meta property="og:image" content="https://portfolio-three-silk-96.vercel.app/assets/og-image.png">
+  <meta property="og:url" content="https://portfolio-personnel-tau.vercel.app/">
+  <meta property="og:image" content="https://portfolio-personnel-tau.vercel.app/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cédric Granata — Concepteur de sites web">
   <meta name="twitter:description" content="Concepteur de sites web à Six-Fours-les-Plages : des sites professionnels qui inspirent confiance à vos clients.">
-  <meta name="twitter:image" content="https://portfolio-three-silk-96.vercel.app/assets/og-image.png">
+  <meta name="twitter:image" content="https://portfolio-personnel-tau.vercel.app/assets/og-image.png">
   <meta name="geo.region" content="FR-83">
   <meta name="geo.placename" content="Six-Fours-les-Plages">
   <meta name="geo.position" content="43.1124;5.8330">
   <meta name="ICBM" content="43.1124, 5.8330">
-  <link rel="stylesheet" href="css/styles.css?v=13">
-</head>
+  <link rel="stylesheet" href="css/styles.css?v=14">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Cédric Granata",
+  "jobTitle": "Concepteur de sites web",
+  "url": "https://portfolio-personnel-tau.vercel.app/",
+  "email": "mailto:granatacedric@gmail.com",
+  "telephone": "+33 7 61 87 53 44",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Six-Fours-les-Plages",
+    "addressCountry": "FR"
+  },
+  "description": "Cédric Granata — concepteur de sites web à Six-Fours-les-Plages."
+}
+</script>
+  </head>
 <body>
   <div class="preloader" id="preloader">
     <p class="preloader__intro" aria-hidden="true">CÉDRIC <span class="preloader__intro-gold">GRANATA</span></p>
     <div class="preloader__inner">
-      <img src="assets/img/logo-granata-cadric-160.png" class="preloader__logo" alt="GRANATA CEDRIC" width="160" height="160">
+      <img src="assets/img/logo-granata-cadric-160.webp" class="preloader__logo" alt="GRANATA CEDRIC" width="160" height="160">
       <div class="preloader__ring" aria-hidden="true"></div>
     </div>
     <p class="preloader__tag" aria-hidden="true">Concepteur de sites web</p>
@@ -44,7 +62,7 @@
   <header class="header">
     <div class="container header__inner">
       <a href="index.html" class="logo">
-        <img src="assets/img/logo-granata-cadric-160.png" class="logo__mark" alt="Logo GRANATA CEDRIC" width="160" height="160" fetchpriority="high">
+        <img src="assets/img/logo-granata-cadric-160.webp" class="logo__mark" alt="Logo GRANATA CEDRIC" width="160" height="160" fetchpriority="high">
         <span class="logo__text">
           <span class="logo__text-top">Portfolio</span>
           <span class="logo__text-name">Granata Cédric</span>
@@ -82,27 +100,27 @@
       <div class="hero__sheen" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content">
-          <p class="hero__tag"><span class="hero__tag-dot"></span> Disponible pour de nouveaux projets</p>
-          <p class="hero__hello">Bonjour, je suis</p>
-          <h1 class="hero__title">Cédric <span class="grad">Granata</span><br><span class="hero__subtitle">Concepteur de sites web</span></h1>
-          <p class="hero__text" id="cfgTagline">
+          <p class="hero__tag"><span class="hero__tag-dot"></span> <span data-t="index::hero_availability">Disponible pour de nouveaux projets</span></p>
+          <p class="hero__hello" data-t="index::hero_hello">Enchanté</p>
+          <h1 class="hero__title"><span data-t="index::hero_title_name">Cédric</span> <span class="grad">Granata</span><br><span class="hero__subtitle" data-t="index::hero_subtitle">Concepteur de sites web</span></h1>
+          <p class="hero__text" id="cfgTagline" data-t="index::hero_text">
             J'accompagne les professionnels du Var à se développer en ligne : site vitrine,
             site e-commerce, réservation en ligne, refonte et référencement. De l'idée jusqu'à la mise en ligne.
           </p>
           <div class="hero__actions">
-            <a href="projets.html" class="btn btn--primary btn--lg">Voir mes réalisations</a>
-            <a href="https://calendly.com/cedbisness/appelle-de-15-min-pour-parler-du-projet" class="btn btn--ghost btn--lg" target="_blank" rel="noopener">Discutons de votre projet</a>
+            <a href="projets.html" class="btn btn--primary btn--lg" data-t="index::hero_cta_realisations">Voir mes réalisations</a>
+            <a href="https://calendly.com/cedbisness/appelle-de-15-min-pour-parler-du-projet" class="btn btn--ghost btn--lg" target="_blank" rel="noopener" data-t="index::hero_cta_discutons">Discutons de votre projet</a>
           </div>
           <ul class="hero__points">
-            <li>Site vitrine, e-commerce &amp; refonte</li>
-            <li>Contact direct par e-mail ou téléphone</li>
-            <li>Accompagnement jusqu'à la mise en ligne</li>
+            <li data-t="index::hero_point_1">Site vitrine, e-commerce &amp; refonte</li>
+            <li data-t="index::hero_point_2">Contact direct par e-mail ou téléphone</li>
+            <li data-t="index::hero_point_3">Accompagnement jusqu'à la mise en ligne</li>
           </ul>
         </div>
         <div class="hero__visual">
           <div class="hero__portrait">
             <div class="hero__portrait-halo" aria-hidden="true"></div>
-            <img class="hero__portrait-img" src="assets/img/cedric-granata-square.jpg" alt="Cédric Granata, concepteur de sites web" width="1080" height="1080" fetchpriority="high" decoding="async">
+            <img class="hero__portrait-img" src="assets/img/cedric-granata-square.webp" alt="Cédric Granata, concepteur de sites web" width="1080" height="1080" fetchpriority="high" decoding="async">
             <span class="hero__portrait-ring" aria-hidden="true"></span>
             <span class="hero__portrait-glow" aria-hidden="true"></span>
           </div>
@@ -114,19 +132,19 @@
       <div class="container stats__inner">
         <div class="stat">
           <span class="stat__num" data-count="2" data-prefix="">0</span>
-          <p class="stat__label">Sites livrés</p>
+          <p class="stat__label" data-t="index::stats_label_1">Sites livrés</p>
         </div>
         <div class="stat">
           <span class="stat__num" data-count="100" data-suffix="%">0</span>
-          <p class="stat__label">Clients satisfaits</p>
+          <p class="stat__label" data-t="index::stats_label_2">Clients satisfaits</p>
         </div>
         <div class="stat">
           <span class="stat__num" data-count="24" data-suffix="h">0</span>
-          <p class="stat__label">Délai de réponse</p>
+          <p class="stat__label" data-t="index::stats_label_3">Délai de réponse</p>
         </div>
         <div class="stat">
           <span class="stat__num" data-count="100" data-suffix="%">0</span>
-          <p class="stat__label">Responsive</p>
+          <p class="stat__label" data-t="index::stats_label_4">Responsive</p>
         </div>
       </div>
     </section>
@@ -147,29 +165,29 @@
     <section class="section section--alt" id="services">
       <div class="container">
         <div class="reveal">
-          <p class="section__kicker">Mes services</p>
-          <h2 class="section__title">Des prestations claires pour votre activité</h2>
-          <p class="section__lead">Création de site web, e-commerce, réservation en ligne, refonte et référencement : des sites conçus sur mesure, de la première idée jusqu'à la mise en ligne.</p>
+          <p class="section__kicker" data-t="index::home_services_kicker">Mes services</p>
+          <h2 class="section__title" data-t="index::home_services_title">Des prestations claires pour votre activité</h2>
+          <p class="section__lead" data-t="index::home_services_lead">Création de site web, e-commerce, réservation en ligne, refonte et référencement : des sites conçus sur mesure, de la première idée jusqu'à la mise en ligne.</p>
         </div>
         <div class="services">
           <div class="service-card reveal">
             <span class="service-card__icon" aria-hidden="true">&#128722;</span>
-            <h3>Site vitrine</h3>
-            <p>Un site élégant et rapide pour présenter votre activité et convertir vos visiteurs en clients.</p>
+            <h3 data-t="index::home_service_1_title">Site vitrine</h3>
+            <p data-t="index::home_service_1_desc">Un site élégant et rapide pour présenter votre activité et convertir vos visiteurs en clients.</p>
           </div>
           <div class="service-card reveal">
             <span class="service-card__icon" aria-hidden="true">&#128176;</span>
-            <h3>Site e-commerce</h3>
-            <p>Vendez vos produits ou services en ligne : catalogue, panier, paiement sécurisé et gestion des commandes.</p>
+            <h3 data-t="index::home_service_2_title">Site e-commerce</h3>
+            <p data-t="index::home_service_2_desc">Vendez vos produits ou services en ligne : catalogue, panier, paiement sécurisé et gestion des commandes.</p>
           </div>
           <div class="service-card reveal">
             <span class="service-card__icon" aria-hidden="true">&#128736;</span>
-            <h3>Refonte de site</h3>
-            <p>Modernisation de votre site existant : nouveau design, navigation plus claire et performance optimisée.</p>
+            <h3 data-t="index::home_service_3_title">Refonte de site</h3>
+            <p data-t="index::home_service_3_desc">Modernisation de votre site existant : nouveau design, navigation plus claire et performance optimisée.</p>
           </div>
         </div>
         <div class="reveal text-center mt-2-2">
-          <a href="services.html" class="btn btn--ghost btn--lg">Voir tous mes services</a>
+          <a href="services.html" class="btn btn--ghost btn--lg" data-t="index::home_services_cta">Voir tous mes services</a>
         </div>
       </div>
     </section>
@@ -177,17 +195,17 @@
     <section class="booking section" id="rendez-vous">
       <div class="container">
         <div class="booking__card reveal">
-          <p class="section__kicker">Rendez-vous</p>
-          <h2 class="section__title">Parlons de votre projet en direct</h2>
-          <p class="section__lead">Choisissez directement un créneau dans mon agenda : échange de 15 minutes, offert et sans engagement, pour clarifier votre projet et vos objectifs.</p>
+          <p class="section__kicker" data-t="index::home_booking_kicker">Rendez-vous</p>
+          <h2 class="section__title" data-t="index::home_booking_title">Parlons de votre projet en direct</h2>
+          <p class="section__lead" data-t="index::home_booking_lead">Choisissez directement un créneau dans mon agenda : échange de 15 minutes, offert et sans engagement, pour clarifier votre projet et vos objectifs.</p>
           <div class="booking__actions">
             <a class="btn btn--primary btn--lg" href="https://calendly.com/cedbisness/appelle-de-15-min-pour-parler-du-projet" target="_blank" rel="noopener" id="cfgBookingLink"><span class="booking__btn-icon" aria-hidden="true">&#128198;</span> Réserver un créneau</a>
-            <a href="contact.html" class="btn btn--ghost btn--lg">Préférer un e-mail ?</a>
+            <a href="contact.html" class="btn btn--ghost btn--lg" data-t="index::home_booking_cta_secondary">Préférer un e-mail ?</a>
           </div>
           <ul class="booking__points">
-            <li>15 minutes, offertes</li>
-            <li>Visio ou téléphone</li>
-            <li>Sans engagement</li>
+            <li data-t="index::home_booking_point_1">15 minutes, offertes</li>
+            <li data-t="index::home_booking_point_2">Visio ou téléphone</li>
+            <li data-t="index::home_booking_point_3">Sans engagement</li>
           </ul>
         </div>
       </div>
@@ -196,15 +214,15 @@
     <section class="section" id="avis">
       <div class="container">
         <div class="reveal">
-          <p class="section__kicker">Témoignage client</p>
-          <h2 class="section__title">Ils me recommandent</h2>
-          <p class="section__lead">Ce que mes clients disent de mon travail.</p>
+          <p class="section__kicker" data-t="index::home_testimonial_kicker">Témoignage client</p>
+          <h2 class="section__title" data-t="index::home_testimonial_title">Ils me recommandent</h2>
+          <p class="section__lead" data-t="index::home_testimonial_lead">Ce que mes clients disent de mon travail.</p>
         </div>
         <div class="testimonials">
           <figure class="testimonial reveal">
             <div class="testimonial__stars" aria-label="5 étoiles">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>J'ai fait appel à Cédric pour mon site de réflexologie plantaire et je ne regrette pas du tout. Il a tout de suite compris mon univers, sans que j'aie besoin de trop expliquer. Le site est vraiment beau, simple à naviguer, et surtout il correspond exactement à l'image que je voulais donner. Il a été patient avec toutes mes demandes (et j'en ai eu pas mal !), toujours à l'écoute. Je le recommande à 100%.</blockquote>
-            <figcaption><b>Monica E.</b><span>Site Reflexio Zen</span></figcaption>
+            <blockquote data-t="index::home_testimonial_quote">J'ai fait appel à Cédric pour mon site de réflexologie plantaire et je ne regrette pas du tout. Il a tout de suite compris mon univers, sans que j'aie besoin de trop expliquer. Le site est vraiment beau, simple à naviguer, et surtout il correspond exactement à l'image que je voulais donner. Il a été patient avec toutes mes demandes (et j'en ai eu pas mal !), toujours à l'écoute. Je le recommande à 100%.</blockquote>
+            <figcaption><b data-t="index::home_testimonial_author">Monica E.</b><span data-t="index::home_testimonial_project">Site Reflexio Zen</span></figcaption>
           </figure>
         </div>
       </div>
@@ -213,13 +231,13 @@
     <section class="cta">
       <div class="container cta__inner">
         <div>
-          <p class="cta__kicker">Contact direct</p>
-          <h2 class="cta__title">Parlons de votre projet</h2>
-          <p class="cta__text">Décrivez votre activité en quelques lignes : on en parle par e-mail ou par téléphone, et je vous réponds sous 24h.</p>
+          <p class="cta__kicker" data-t="index::home_cta_kicker">Contact direct</p>
+          <h2 class="cta__title" data-t="index::home_cta_title">Parlons de votre projet</h2>
+          <p class="cta__text" data-t="index::home_cta_text">Décrivez votre activité en quelques lignes : on en parle par e-mail ou par téléphone, et je vous réponds sous 24h.</p>
         </div>
         <div class="cta__actions">
-          <a href="contact.html" class="btn btn--primary btn--lg">Contactez-moi</a>
-          <a href="projets.html" class="btn btn--ghost btn--lg">Voir mes réalisations</a>
+          <a href="contact.html" class="btn btn--primary btn--lg" data-t="index::home_cta_btn_primary">Contactez-moi</a>
+          <a href="projets.html" class="btn btn--ghost btn--lg" data-t="index::home_cta_btn_secondary">Voir mes réalisations</a>
         </div>
       </div>
     </section>
@@ -241,13 +259,14 @@
 
   <a href="contact.html" class="contact-float" aria-label="Me contacter">
     <span class="contact-float__icon" aria-hidden="true">&#9993;</span>
-    <span class="contact-float__label">Prêt à concevoir votre site</span>
+    <span class="contact-float__label" data-t="global::contact_float_label">Prêt à concevoir votre site</span>
   </a>
 
   <button class="back-top" id="backTop" aria-label="Revenir en haut de page" hidden>&#8593;</button>
 
-  <script src="js/config.js?v=12" defer></script>
-  <script src="js/projects.js?v=12" defer></script>
-  <script src="js/main.js?v=12" defer></script>
+  <script src="js/config.js?v=15" defer></script>
+  <script src="js/projects.js?v=15" defer></script>
+
+  <script src="js/main.js?v=15" defer></script>
 </body>
 </html>

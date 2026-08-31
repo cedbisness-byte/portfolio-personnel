@@ -9,12 +9,12 @@ window.PORTFOLIO_PROJECTS = [
     kicker: 'Site vitrine · Réflexologie',
     url: 'https://reflexio-zen-v2.vercel.app',
     shots: [
-      'assets/screenshots/reflexologie-zen.png',
-      'assets/screenshots/reflexologie-zen-prestations.png',
-      'assets/screenshots/reflexologie-zen-bienfaits.png',
-      'assets/screenshots/reflexologie-zen-rdv.png',
-      'assets/screenshots/reflexologie-zen-apropos.png',
-      'assets/screenshots/reflexologie-zen-contact.png'
+      'assets/screenshots/reflexologie-zen.webp',
+      'assets/screenshots/reflexologie-zen-prestations.webp',
+      'assets/screenshots/reflexologie-zen-bienfaits.webp',
+      'assets/screenshots/reflexologie-zen-rdv.webp',
+      'assets/screenshots/reflexologie-zen-apropos.webp',
+      'assets/screenshots/reflexologie-zen-contact.webp'
     ],
     tagline: 'Le site en ligne de Monica Estevez, réflexologue à Six-Fours-les-Plages : prise de rendez-vous et présentation des séances.',
     description:
@@ -38,12 +38,12 @@ window.PORTFOLIO_PROJECTS = [
     kicker: 'Site vitrine · Santé',
     url: 'https://centre-dentaire-hermes.vercel.app',
     shots: [
-      'assets/screenshots/centre-dentaire-hermes.png',
-      'assets/screenshots/centre-dentaire-hermes-cabinet.png',
-      'assets/screenshots/centre-dentaire-hermes-soins.png',
-      'assets/screenshots/centre-dentaire-hermes-honoraires.png',
-      'assets/screenshots/centre-dentaire-hermes-avis.png',
-      'assets/screenshots/centre-dentaire-hermes-contact.png'
+      'assets/screenshots/centre-dentaire-hermes.webp',
+      'assets/screenshots/centre-dentaire-hermes-cabinet.webp',
+      'assets/screenshots/centre-dentaire-hermes-soins.webp',
+      'assets/screenshots/centre-dentaire-hermes-honoraires.webp',
+      'assets/screenshots/centre-dentaire-hermes-avis.webp',
+      'assets/screenshots/centre-dentaire-hermes-contact.webp'
     ],
     tagline: 'Un site moderne et rassurant pour un cabinet dentaire à La Seyne-sur-Mer.',
     description:
@@ -67,11 +67,11 @@ window.PORTFOLIO_PROJECTS = [
     kicker: 'Site vitrine · Restauration',
     url: 'https://bienvanui-site.vercel.app',
     shots: [
-      'assets/screenshots/bienvanui.png',
-      'assets/screenshots/bienvanui-menus.png',
-      'assets/screenshots/bienvanui-equipe.png',
-      'assets/screenshots/bienvanui-avis.png',
-      'assets/screenshots/bienvanui-reserver.png'
+      'assets/screenshots/bienvanui.webp',
+      'assets/screenshots/bienvanui-menus.webp',
+      'assets/screenshots/bienvanui-equipe.webp',
+      'assets/screenshots/bienvanui-avis.webp',
+      'assets/screenshots/bienvanui-reserver.webp'
     ],
     tagline:
       'Un site vitrine haut de gamme pour un restaurant gastronomique à Sanary-sur-Mer.',
@@ -95,12 +95,12 @@ window.PORTFOLIO_PROJECTS = [
     kicker: 'Site vitrine · Coiffure (proposition réelle)',
     url: 'https://les-ciseaux-dalaric-site.vercel.app',
     shots: [
-      'assets/screenshots/les-ciseaux-dalaric.png',
-      'assets/screenshots/les-ciseaux-dalaric-prestations.png',
-      'assets/screenshots/les-ciseaux-dalaric-galerie.png',
-      'assets/screenshots/les-ciseaux-dalaric-avis.png',
-      'assets/screenshots/les-ciseaux-dalaric-domicile.png',
-      'assets/screenshots/les-ciseaux-dalaric-contact.png'
+      'assets/screenshots/les-ciseaux-dalaric.webp',
+      'assets/screenshots/les-ciseaux-dalaric-prestations.webp',
+      'assets/screenshots/les-ciseaux-dalaric-galerie.webp',
+      'assets/screenshots/les-ciseaux-dalaric-avis.webp',
+      'assets/screenshots/les-ciseaux-dalaric-domicile.webp',
+      'assets/screenshots/les-ciseaux-dalaric-contact.webp'
     ],
     tagline:
       'Une maquette premium « wow » multi-pages pour un vrai salon de coiffure à Six-Fours-les-Plages, prête à leur être proposée.',
@@ -129,12 +129,12 @@ window.PORTFOLIO_PROJECTS = [
     kicker: 'Site vitrine · Immobilier',
     url: 'https://seasun-immobilier-site.vercel.app',
     shots: [
-      'assets/screenshots/seasun-immobilier.png',
-      'assets/screenshots/seasun-immobilier-biens.png',
-      'assets/screenshots/seasun-immobilier-services.png',
-      'assets/screenshots/seasun-immobilier-contact.png',
-      'assets/screenshots/seasun-immobilier-mentions.png',
-      'assets/screenshots/seasun-immobilier-cookies.png'
+      'assets/screenshots/seasun-immobilier.webp',
+      'assets/screenshots/seasun-immobilier-biens.webp',
+      'assets/screenshots/seasun-immobilier-services.webp',
+      'assets/screenshots/seasun-immobilier-contact.webp',
+      'assets/screenshots/seasun-immobilier-mentions.webp',
+      'assets/screenshots/seasun-immobilier-cookies.webp'
     ],
     tagline: 'Une maquette premium pour une vraie agence de Six-Fours dont le site ne fonctionnait plus.',
     description:
@@ -161,11 +161,11 @@ window.PORTFOLIO_PROJECTS = [
     kicker: 'Site vitrine · Santé & expertise',
     url: 'https://csm-expertise-sante.vercel.app',
     shots: [
-      'assets/screenshots/csm-expertise-sante.png',
-      'assets/screenshots/csm-expertise-sante-prestations.png',
-      'assets/screenshots/csm-expertise-sante-contact.png',
-      'assets/screenshots/csm-expertise-sante-mentions.png',
-      'assets/screenshots/csm-expertise-sante-politique.png'
+      'assets/screenshots/csm-expertise-sante.webp',
+      'assets/screenshots/csm-expertise-sante-prestations.webp',
+      'assets/screenshots/csm-expertise-sante-contact.webp',
+      'assets/screenshots/csm-expertise-sante-mentions.webp',
+      'assets/screenshots/csm-expertise-sante-politique.webp'
     ],
     tagline: 'Le site de l\'expertise santé : présentation des prestations, de la structure et contacts directs.',
     description:
