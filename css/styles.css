@@ -1266,6 +1266,19 @@ img.logo__icon {
   transition: transform 0.8s cubic-bezier(0.28, 1, 0.36, 1);
 }
 .section.is-visible { transform: translateY(0); }
+
+/* --- Écritures qui "se mettent en place" en descendant : kicker → titre → lead --- */
+.reveal > .section__kicker,
+.reveal > .section__title,
+.reveal > .section__lead { transform: translateY(24px); }
+.reveal.is-visible > .section__kicker { animation: writeUp 0.55s cubic-bezier(0.28, 1, 0.36, 1) 0.08s both; }
+.reveal.is-visible > .section__title { animation: writeUp 0.65s cubic-bezier(0.28, 1, 0.36, 1) 0.24s both; }
+.reveal.is-visible > .section__lead { animation: writeUp 0.65s cubic-bezier(0.28, 1, 0.36, 1) 0.42s both; }
+@keyframes writeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* =========================================================================
    TARIFS — cartes de prix et options
    ========================================================================= */
