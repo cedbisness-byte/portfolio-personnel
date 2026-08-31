@@ -1251,3 +1251,47 @@ img.logo__icon {
   transition: transform 0.8s cubic-bezier(0.28, 1, 0.36, 1);
 }
 .section.is-visible { transform: translateY(0); }
+/* =========================================================================
+   TARIFS — cartes de prix et options
+   ========================================================================= */
+.pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.price-card {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 0.9rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 1.7rem 1.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.price-card:hover { transform: translateY(-6px); border-color: var(--accent-border); box-shadow: 0 22px 44px -16px rgba(217,185,106,0.32), var(--shadow-lg); }
+.price-card--featured { border-color: var(--accent); background: linear-gradient(180deg, rgba(217,185,106,0.08), var(--surface)); }
+.price-card--featured::before {
+  content: 'Le plus choisi'; position: absolute; top: 0; right: 0;
+  background: var(--grad); color: #121510; font-size: 0.68rem; font-weight: 700;
+  padding: 0.3rem 0.7rem; border-bottom-left-radius: 10px; letter-spacing: 0.04em;
+}
+.price-card__name { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+.price-card__price { font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; line-height: 1; color: var(--accent); }
+.price-card__price small { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); font-family: var(--font-body); }
+.price-card__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.price-card__list li { font-size: 0.8rem; color: var(--text-muted); position: relative; padding-left: 1.2rem; }
+.price-card__list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.price-card .btn { margin-top: auto; }
+.pricing-note { margin-top: 1.4rem; font-size: 0.85rem; color: var(--text-muted); max-width: 48rem; }
+.pricing-note strong { color: var(--accent); }
+.opt-card {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 0.6rem;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 1.5rem 1.4rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.opt-card:hover { transform: translateY(-5px); border-color: var(--accent-border); box-shadow: 0 18px 40px -16px rgba(217,185,106,0.3), var(--shadow-lg); }
+.opt-card__name { font-size: 1rem; font-weight: 700; color: var(--text); }
+.opt-card__price { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--accent); }
+.opt-card__price small { font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-body); font-weight: 500; }
+.opt-card__badge {
+  display: inline-block; width: fit-content; margin-top: 0.3rem;
+  background: rgba(217,185,106,0.14); color: var(--accent); border: 1px solid var(--accent-border);
+  font-size: 0.72rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 20px;
+}
+.opt-card ul { list-style: none; margin: 0.4rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.opt-card ul li { font-size: 0.8rem; color: var(--text-muted); position: relative; padding-left: 1.2rem; }
+.opt-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
