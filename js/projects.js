@@ -187,7 +187,7 @@ window.PORTFOLIO_PROJECTS = [
     categorie: 'fictif',
     name: 'Atelier Azur',
     kicker: 'Site e-commerce · Menuiserie',
-    url: 'https://atelier-azur.vercel.app',
+    url: 'https://atelier-azur-site.vercel.app',
     shots: [
       'assets/screenshots/atelier-azur.webp',
       'assets/screenshots/atelier-azur-fenetres.webp',
