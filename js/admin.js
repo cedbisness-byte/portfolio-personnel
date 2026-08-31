@@ -63,6 +63,12 @@
         document.getElementById('fPhone').value = cfg.phone || '';
         document.getElementById('fCity').value = cfg.city || '';
         document.getElementById('fAvailability').value = cfg.availability || '';
+        document.getElementById('fBookingUrl').value = cfg.bookingUrl || '';
+        document.getElementById('fBookingLabel').value = cfg.bookingLabel || '';
+        document.getElementById('fFormEndpoint').value = cfg.formEndpoint || '';
+        document.getElementById('fLinkedin').value = cfg.linkedin || '';
+        document.getElementById('fGithub').value = cfg.github || '';
+        document.getElementById('fInstagram').value = cfg.instagram || '';
       })
       .catch(function () {});
   }
@@ -83,7 +89,13 @@
         email: document.getElementById('fEmail').value,
         phone: document.getElementById('fPhone').value,
         city: document.getElementById('fCity').value,
-        availability: document.getElementById('fAvailability').value
+        availability: document.getElementById('fAvailability').value,
+        bookingUrl: document.getElementById('fBookingUrl').value,
+        bookingLabel: document.getElementById('fBookingLabel').value,
+        formEndpoint: document.getElementById('fFormEndpoint').value,
+        linkedin: document.getElementById('fLinkedin').value,
+        github: document.getElementById('fGithub').value,
+        instagram: document.getElementById('fInstagram').value
       }
     };
     var btn = document.getElementById('btnSave');

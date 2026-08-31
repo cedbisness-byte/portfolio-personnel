@@ -2,7 +2,7 @@
 // puis pousse le fichier sur GitHub → Vercel redéploie automatiquement.
 // Nécessite : GITHUB_TOKEN (secret Vercel) et ADMIN_PASSWORD (secret Vercel).
 
-const FIELDS = ['name', 'initials', 'role', 'tagline', 'email', 'phone', 'city', 'availability'];
+const FIELDS = ['name', 'initials', 'role', 'tagline', 'email', 'phone', 'city', 'availability', 'bookingUrl', 'bookingLabel', 'formEndpoint', 'linkedin', 'github', 'instagram'];
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Administration — Cédric Granata</title>
-  <link rel="stylesheet" href="css/styles.css?v=12">
-  <link rel="stylesheet" href="css/admin.css?v=13">
+  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="stylesheet" href="css/admin.css?v=14">
 </head>
 <body class="admin">
   <div class="admin-wrap">
@@ -66,6 +66,36 @@
         <input type="text" id="fAvailability">
       </div>
 
+      <p class="section__kicker">Prise de rendez-vous (Calendly)</p>
+      <div class="admin-field">
+        <label>Lien Calendly</label>
+        <input type="text" id="fBookingUrl" placeholder="https://calendly.com/...">
+      </div>
+      <div class="admin-field">
+        <label>Libellé du bouton de réservation</label>
+        <input type="text" id="fBookingLabel">
+      </div>
+
+      <p class="section__kicker">Formulaire de contact</p>
+      <div class="admin-field">
+        <label>Endpoint Formspree (envoi des messages)</label>
+        <input type="text" id="fFormEndpoint" placeholder="https://formspree.io/f/...">
+      </div>
+
+      <p class="section__kicker">Réseaux sociaux</p>
+      <div class="admin-field">
+        <label>LinkedIn</label>
+        <input type="text" id="fLinkedin" placeholder="https://linkedin.com/in/...">
+      </div>
+      <div class="admin-field">
+        <label>GitHub</label>
+        <input type="text" id="fGithub" placeholder="https://github.com/...">
+      </div>
+      <div class="admin-field">
+        <label>Instagram</label>
+        <input type="text" id="fInstagram" placeholder="https://instagram.com/...">
+      </div>
+
       <div class="admin-actions">
         <button type="button" class="btn--primary" id="btnSave">Enregistrer</button>
         <button type="button" class="btn--ghost" id="btnLogout">Se déconnecter</button>
@@ -94,6 +124,6 @@
 
   </div>
 
-  <script src="js/admin.js?v=13" defer></script>
+  <script src="js/admin.js?v=14" defer></script>
 </body>
 </html>

@@ -64,6 +64,12 @@ function extractConfig(content) {
     email: get('email'),
     phone: get('phone'),
     city: get('city'),
-    availability: get('availability')
+    availability: get('availability'),
+    bookingUrl: get('bookingUrl'),
+    bookingLabel: get('bookingLabel'),
+    formEndpoint: get('formEndpoint'),
+    linkedin: get('linkedin'),
+    github: get('github'),
+    instagram: get('instagram')
   };
 }
