@@ -32,6 +32,38 @@ window.PORTFOLIO_PROJECTS = [
     year: '2026'
   },
   {
+    id: 'boudoir-co',
+    categorie: 'reel',
+    name: 'Boudoir & Co',
+    kicker: 'Site e-commerce · Mode & vêtements',
+    url: 'https://boutiquemode-site.vercel.app',
+    shots: [
+      'assets/screenshots/boudoir-co.webp',
+      'assets/screenshots/boudoir-co-boutique.webp',
+      'assets/screenshots/boudoir-co-produit.webp',
+      'assets/screenshots/boudoir-co-panier.webp',
+      'assets/screenshots/boudoir-co-commande.webp',
+      'assets/screenshots/boudoir-co-contact.webp',
+      'assets/screenshots/boudoir-co-livraison.webp'
+    ],
+    tagline: 'Une boutique en ligne complète de mode & vêtements avec catalogue, panier et commande.',
+    description:
+      'Conception et développement d\'un site e-commerce classique pour la marque de mode Boudoir & Co : un catalogue de 14 produits (sweats, robes, vestes, accessoires…), un panier persistant, une fiche produit détaillée et un tunnel de commande complet. Design sobre et élégant (palette sable & encre).',
+    details: [
+      'Site multi-pages : Accueil, Boutique, Fiche produit, Panier, Commande, Confirmation, Contact, Livraison, CGV, Mentions légales, Confidentialité',
+      'Catalogue de 14 produits avec catégories (Femme, Homme, Accessoires) et filtres ?cat=',
+      'Fiche produit détaillée (prix, description, badges, promos)',
+      'Panier persistant en localStorage, tri par prix, promotions',
+      'Tunnel de commande complet avec confirmation et simulation de paiement',
+      'Header sticky, menu mobile, animations au défilement',
+      'Design sobre et élégant : palette sable & encre, boutiques de mode haut de gamme',
+      '100 % responsive, mobile-first'
+    ],
+    techs: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'E-commerce'],
+    client: 'Boudoir & Co (démonstration)',
+    year: '2026'
+  },
+  {
     id: 'centre-dentaire-hermes',
     categorie: 'fictif',
     name: 'Centre Dentaire Hermès',
