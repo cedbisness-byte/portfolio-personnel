@@ -132,6 +132,9 @@
     document.querySelectorAll('.reveal:not(.is-visible)').forEach(function (el) {
       revealObserver.observe(el);
     });
+    document.querySelectorAll('.section:not(.is-visible)').forEach(function (el) {
+      revealObserver.observe(el);
+    });
   }
   observeReveals();
 

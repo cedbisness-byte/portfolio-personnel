@@ -1201,3 +1201,53 @@ img.logo__icon {
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #e8c97c, #a9863c); }
+/* =========================================================================
+   SITE QUI "SE CONSTRUIT" AU SCROLL — révélations en cascade élastique
+   ========================================================================= */
+
+/* --- Amplification du reveal : les blocs montent et se posent en rebond --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(52px);
+  transition:
+    opacity 0.7s cubic-bezier(0.28, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.28, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: buildPad 0.7s cubic-bezier(0.28, 1, 0.36, 1);
+}
+@keyframes buildPad {
+  0% { opacity: 0; transform: translateY(52px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Cascade ordinale pour les grilles (services, étapes, outils, avis) --- */
+.services .service-card:nth-child(2),
+.tools .tool:nth-child(2),
+.testimonials .testimonial:nth-child(2) { transition-delay: 0.12s; animation-delay: 0.12s; }
+.services .service-card:nth-child(3),
+.tools .tool:nth-child(3) { transition-delay: 0.24s; animation-delay: 0.24s; }
+.tools .tool:nth-child(4) { transition-delay: 0.36s; animation-delay: 0.36s; }
+
+/* --- Ligne dorée qui "s'écrit" en bas de chaque section à la création --- */
+.section { position: relative; }
+.section::after {
+  content: ''; position: absolute; left: 50%; bottom: 0;
+  width: 0; height: 2px; transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0; pointer-events: none;
+}
+.section.is-visible::after { animation: buildLine 0.9s ease 0.15s forwards; }
+@keyframes buildLine {
+  0% { width: 0; opacity: 0.6; }
+  100% { width: 60%; opacity: 0.25; }
+}
+
+/* --- Les sections montent légèrement quand elles se construisent --- */
+.section {
+  transform: translateY(24px);
+  transition: transform 0.8s cubic-bezier(0.28, 1, 0.36, 1);
+}
+.section.is-visible { transform: translateY(0); }
