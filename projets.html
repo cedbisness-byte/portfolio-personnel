@@ -24,7 +24,7 @@
   <meta name="twitter:title" content="Mes projets — Cédric Granata">
   <meta name="twitter:description" content="Découvrez les sites web créés par Cédric Granata, concepteur de sites à Six-Fours-les-Plages.">
   <meta name="twitter:image" content="https://portfolio-personnel-tau.vercel.app/assets/og-image.png">
-  <link rel="stylesheet" href="css/styles.css?v=17">
+  <link rel="stylesheet" href="css/styles.css?v=18">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -132,7 +132,13 @@
       <button class="modal__close" id="modalClose" aria-label="Fermer">&#10005;</button>
       <div class="modal__preview">
         <div class="modal__browser-bar"><span></span><span></span><span></span><span class="modal__browser-url" id="modalUrl"></span></div>
-        <iframe id="modalFrame" class="modal__frame" title="Aperçu du projet" loading="lazy"></iframe>
+        <div class="modal__view-toggle" role="group" aria-label="Vue de l'aperçu">
+          <button type="button" class="modal__view-btn is-active" data-view="live">Faire défiler le site</button>
+          <button type="button" class="modal__view-btn" data-view="shots">Screenshots</button>
+        </div>
+        <div class="modal__frame-wrap" id="modalFrameWrap">
+          <iframe id="modalFrame" class="modal__frame" title="Aperçu du site, défilable" loading="lazy"></iframe>
+        </div>
         <div class="modal__shot hidden" id="modalShot"></div>
         <div class="modal__gallery hidden" id="modalGallery"></div>
       </div>
@@ -157,6 +163,6 @@
   <script src="js/config.js?v=15" defer></script>
   <script src="js/projects.js?v=16" defer></script>
 
-  <script src="js/main.js?v=16" defer></script>
+  <script src="js/main.js?v=17" defer></script>
 </body>
 </html>

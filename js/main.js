@@ -281,20 +281,30 @@
   var modalTechs = document.getElementById('modalTechs');
   var modalOpen = document.getElementById('modalOpen');
 
+  var modalFrameWrap = document.getElementById('modalFrameWrap');
+  var modalViewBtns = document.querySelectorAll('.modal__view-btn');
+  var currentView = 'live';
+
+  function switchModalView(view, project) {
+    currentView = view;
+    modalViewBtns.forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-view') === view);
+    });
+    var live = view === 'live';
+    if (modalFrameWrap) modalFrameWrap.classList.toggle('hidden', !live);
+    if (modalShot) modalShot.classList.toggle('hidden', live);
+    if (modalGallery) modalGallery.classList.toggle('hidden', live || !project || (project.shots && project.shots.length <= 1));
+    if (live && modalFrame) modalFrame.src = project && project.url ? project.url : 'about:blank';
+  }
+
   function setModalPreview(project) {
     var shots = project.shots || [];
     var current = shots.length ? shots[0] : '';
-    if (modalFrame) { modalFrame.classList.add('hidden'); modalFrame.src = 'about:blank'; }
+    if (modalFrame) { modalFrame.src = project.url || 'about:blank'; }
     if (modalShot) {
       modalShot.innerHTML = current ? '<img src="' + esc(current) + '" alt="Aperçu de ' + esc(project.name) + '">' : '';
-      modalShot.classList.remove('hidden');
     }
     if (modalGallery) {
-      if (shots.length > 1) {
-        modalGallery.classList.remove('hidden');
-      } else {
-        modalGallery.classList.add('hidden');
-      }
       modalGallery.innerHTML = shots.map(function (s, i) {
         return '<img src="' + esc(s) + '" alt="Page ' + (i + 1) + '" class="' + (i === 0 ? 'is-active' : '') + '" data-src="' + esc(s) + '">';
       }).join('');
@@ -307,7 +317,18 @@
       });
     }
     if (modalUrl) { modalUrl.textContent = current || project.url; }
+    switchModalView('live', project);
   }
+
+  modalViewBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var view = btn.getAttribute('data-view');
+      var idxEl = modal && modal.getAttribute('data-index');
+      var project = projects[parseInt(idxEl, 10)];
+      switchModalView(view, project);
+      if (view === 'shots' && modalFrame) { modalFrame.src = 'about:blank'; }
+    });
+  });
 
   function openModal(index) {
     var project = projects[index];
@@ -320,6 +341,7 @@
     modalTechs.innerHTML = project.techs.map(function (t) { return '<span class="tech">' + esc(t) + '</span>'; }).join('');
     modalOpen.href = project.url;
     modal.classList.add('is-open');
+    modal.setAttribute('data-index', index);
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('no-scroll');
   }
