@@ -181,34 +181,5 @@ window.PORTFOLIO_PROJECTS = [
     techs: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'SEO'],
     client: 'CSM Expertise Santé',
     year: '2026'
-  },
-  {
-    id: 'atelier-azur',
-    categorie: 'fictif',
-    name: 'Atelier Azur',
-    kicker: 'Site e-commerce · Menuiserie',
-    url: 'https://atelier-azur-site.vercel.app',
-    shots: [
-      'assets/screenshots/atelier-azur.webp',
-      'assets/screenshots/atelier-azur-fenetres.webp',
-      'assets/screenshots/atelier-azur-portes.webp',
-      'assets/screenshots/atelier-azur-volets.webp',
-      'assets/screenshots/atelier-azur-pergolas.webp',
-      'assets/screenshots/atelier-azur-devis.webp'
-    ],
-    tagline: 'Site e-commerce fictif de menuiserie : catalogue de fenêtres, portes, volets et pergolas, avec panier et demande de devis en ligne.',
-    description:
-      'Création d\'un site e-commerce fictif pour un menuisier aluminium : un catalogue de produits complet (fenêtres, portes, volets, pergolas), un panier de commande et un système de demande de devis en ligne. Le prix est établi sur devis en fonction des besoins.',
-    details: [
-      'Catalogue produits : fenêtres, portes, volets et pergolas',
-      'Fiches produits détaillées avec photos et dimensions',
-      'Panier de commande et demande de devis en ligne',
-      'Formulaire de contact et de demande de devis',
-      'Prix établi sur devis selon le projet',
-      '100 % responsive et optimisé pour le référencement'
-    ],
-    techs: ['HTML5', 'CSS3', 'JavaScript', 'E-commerce', 'Responsive Design', 'SEO'],
-    client: 'Atelier Azur — Menuiserie (projet fictif)',
-    year: '2026'
-  },
+  }
 ];
