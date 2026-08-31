@@ -28,7 +28,7 @@ window.PORTFOLIO_CONFIG = {
 
   // Réseaux (laisser vide si pas de lien)
   social: {
-    linkedin: 'https://linkedin.com/in/test-temporaire',
+    linkedin: '',
     github: '',
     instagram: ''
   }
