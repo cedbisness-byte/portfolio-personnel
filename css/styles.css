@@ -606,17 +606,19 @@ img.logo__icon {
 
   .nav {
     position: fixed; inset: 68px 0 0 0;
-    background: rgba(18, 21, 16, 0.97); flex-direction: column;
+    background: #14170f; flex-direction: column;
     justify-content: space-between; align-items: center;
     padding: 2.5rem 1.5rem 3rem;
     transform: translateX(100%); transition: transform 0.3s ease;
     border-bottom: 1px solid var(--border);
     z-index: 150;
-    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   }
   .nav.is-open { transform: translateX(0); }
   .nav__list { flex-direction: column; align-items: center; gap: 1.5rem; list-style: none; }
-  .nav__link { font-size: 1.15rem; }
+  .nav__link { font-size: 1.2rem; color: #eceade; }
+  .nav__link:hover, .nav__link.is-active { color: #d9b96a; }
+  .nav__link::after { background: #d9b96a; height: 2px; }
   .nav__cta { width: 100%; max-width: 260px; text-align: center; font-size: 0.95rem; padding: 0.9rem 1.8rem; }
   .nav-toggle {
     display: flex;
