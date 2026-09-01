@@ -44,22 +44,26 @@ window.PORTFOLIO_PROJECTS = [
       'assets/screenshots/boudoir-co-panier.webp',
       'assets/screenshots/boudoir-co-commande.webp',
       'assets/screenshots/boudoir-co-contact.webp',
-      'assets/screenshots/boudoir-co-livraison.webp'
+      'assets/screenshots/boudoir-co-livraison.webp',
+      'assets/screenshots/boudoir-co-faq.webp',
+      'assets/screenshots/boudoir-co-guide-tailles.webp'
     ],
-    tagline: 'Une boutique en ligne complète de mode & vêtements avec catalogue, panier et commande.',
+    tagline: 'Une boutique en ligne complète de mode & vêtements : catalogue riche, panier intelligent, commande fluide.',
     description:
-      'Conception et développement d\'un site e-commerce classique pour la marque de mode Boudoir & Co : un catalogue de 14 produits (sweats, robes, vestes, accessoires…), un panier persistant, une fiche produit détaillée et un tunnel de commande complet. Design sobre et élégant (palette sable & encre).',
+      'Conception et développement complet d\'un site e-commerce professionnel pour la marque de mode Boudoir & Co : catalogue de 14 produits détaillés (tailles, couleurs, matières, stock, remises), recherche & filtres, aperçu rapide, panier persistant avec quantités, TVA et codes promo, tunnel de commande sécurisé et pages annexes complètes.',
     details: [
-      'Site multi-pages : Accueil, Boutique, Fiche produit, Panier, Commande, Confirmation, Contact, Livraison, CGV, Mentions légales, Confidentialité',
-      'Catalogue de 14 produits avec catégories (Femme, Homme, Accessoires) et filtres ?cat=',
-      'Fiche produit détaillée (prix, description, badges, promos)',
-      'Panier persistant en localStorage, tri par prix, promotions',
-      'Tunnel de commande complet avec confirmation et simulation de paiement',
-      'Header sticky, menu mobile, animations au défilement',
-      'Design sobre et élégant : palette sable & encre, boutiques de mode haut de gamme',
-      '100 % responsive, mobile-first'
+      'Site multi-pages : Accueil, Boutique, Fiche produit, Panier, Commande, Confirmation, Contact, FAQ, Guide des tailles, Livraison & retours, CGV, Mentions légales, Confidentialité',
+      'Catalogue de 14 produits enrichis : tailles, couleurs, matières, référence, stock, badge & remise automatique',
+      'Recherche en direct, filtres par catégorie (?cat=) et tri (prix, nom, promotions)',
+      'Aperçu rapide (quick view) au survol + fiche produit avec sélecteurs de taille/couleur et galerie lightbox',
+      'Panier persistant (localStorage) avec quantités par variante, sous-total, TVA 20% et livraison offerte dès 99 €',
+      'Codes promo (BIENVENUE10, BOUDOIR15, MODE20) appliqués en temps réel',
+      'Tunnel de commande complet avec récapitulatif, validation d\'email et page de confirmation',
+      'FAQ interactive (accordéon), guide des tailles et pointures, pages juridiques détaillées',
+      'Design premium sur-mesure : palette sable & encre, typographie éditoriale, micro-animations, header sticky',
+      '100 % responsive, mobile-first, favicon & SEO'
     ],
-    techs: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'E-commerce'],
+    techs: ['HTML5', 'CSS3', 'JavaScript', 'LocalStorage', 'Responsive Design', 'E-commerce'],
     client: 'Boudoir & Co (démonstration)',
     year: '2026'
   },

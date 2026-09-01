@@ -283,7 +283,30 @@
 
   var modalFrameWrap = document.getElementById('modalFrameWrap');
   var modalViewBtns = document.querySelectorAll('.modal__view-btn');
+  var modalFrameNote = document.getElementById('modalFrameNote');
+  var modalFrameNoteShots = document.getElementById('modalNoteShots');
+  var modalNoteOpen = document.getElementById('modalNoteOpen');
   var currentView = 'live';
+
+  /* Sites connus comme affichables dans un iframe (sans X-Frame-Options bloquant).
+     Les autres sont tentés en direct ; si le navigateur refuse, on affiche un message. */
+  var FRAMEABLE = ['boutiquemode-site.vercel.app'];
+  function hostOf(url) { try { return new URL(url).hostname; } catch (e) { return ''; } }
+
+  function isFrameableCandidate(project) {
+    return FRAMEABLE.indexOf(hostOf(project && project.url)) !== -1;
+  }
+
+  function setModalNote(show) {
+    if (modalFrameNote) modalFrameNote.hidden = !show;
+  }
+
+  function refreshFrameNote(project) {
+    // On ne montre le message que pour les sites qui refusent vraisemblablement l'affichage intégré.
+    var showNote = !!(project && !isFrameableCandidate(project));
+    setModalNote(showNote);
+    if (modalNoteOpen && project) { modalNoteOpen.href = project.url; }
+  }
 
   function switchModalView(view, project) {
     currentView = view;
@@ -294,7 +317,10 @@
     if (modalFrameWrap) modalFrameWrap.classList.toggle('hidden', !live);
     if (modalShot) modalShot.classList.toggle('hidden', live);
     if (modalGallery) modalGallery.classList.toggle('hidden', live || !project || (project.shots && project.shots.length <= 1));
-    if (live && modalFrame) modalFrame.src = project && project.url ? project.url : 'about:blank';
+    if (live && modalFrame) {
+      modalFrame.src = project && project.url ? project.url : 'about:blank';
+      refreshFrameNote(project);
+    }
   }
 
   function setModalPreview(project) {
@@ -329,6 +355,13 @@
       if (view === 'shots' && modalFrame) { modalFrame.src = 'about:blank'; }
     });
   });
+
+  if (modalFrameNoteShots) {
+    modalFrameNoteShots.addEventListener('click', function () {
+      var viewBtn = document.querySelector('.modal__view-btn[data-view=shots]');
+      if (viewBtn) viewBtn.click();
+    });
+  }
 
   function openModal(index) {
     var project = projects[index];

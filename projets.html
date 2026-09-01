@@ -24,7 +24,7 @@
   <meta name="twitter:title" content="Mes projets — Cédric Granata">
   <meta name="twitter:description" content="Découvrez les sites web créés par Cédric Granata, concepteur de sites à Six-Fours-les-Plages.">
   <meta name="twitter:image" content="https://portfolio-personnel-tau.vercel.app/assets/og-image.png">
-  <link rel="stylesheet" href="css/styles.css?v=19">
+  <link rel="stylesheet" href="css/styles.css?v=20">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -138,6 +138,15 @@
         </div>
         <div class="modal__frame-wrap" id="modalFrameWrap">
           <iframe id="modalFrame" class="modal__frame" title="Aperçu du site, défilable" loading="lazy"></iframe>
+          <div class="modal__frame-note" id="modalFrameNote" hidden>
+            <div class="modal__note-ico">&#9888;&#65039;</div>
+            <p class="modal__note-title">Ce site s'affiche difficilement ici</p>
+            <p class="modal__note-text" id="modalFrameNoteText">Le site bloque son affichage dans un cadre intégré (sécurité X-Frame-Options). Pour le parcourir librement, ouvrez-le en direct ou explorez les captures d'écran.</p>
+            <div class="modal__note-actions">
+              <button type="button" class="btn btn--primary btn--sm" id="modalNoteShots">Voir les captures</button>
+              <a class="btn btn--ghost btn--sm" id="modalNoteOpen" href="#" target="_blank" rel="noopener">Ouvrir le site &#8599;</a>
+            </div>
+          </div>
         </div>
         <div class="modal__shot hidden" id="modalShot"></div>
         <div class="modal__gallery hidden" id="modalGallery"></div>
@@ -161,8 +170,8 @@
   <button class="back-top" id="backTop" aria-label="Revenir en haut de page" hidden>&#8593;</button>
 
   <script src="js/config.js?v=15" defer></script>
-  <script src="js/projects.js?v=19" defer></script>
+  <script src="js/projects.js?v=20" defer></script>
 
-  <script src="js/main.js?v=17" defer></script>
+  <script src="js/main.js?v=18" defer></script>
 </body>
 </html>
