@@ -270,7 +270,6 @@
 
   // ---------- Modale ----------
   var modal = document.getElementById('modal');
-  var modalFrame = document.getElementById('modalFrame');
   var modalShot = document.getElementById('modalShot');
   var modalGallery = document.getElementById('modalGallery');
   var modalUrl = document.getElementById('modalUrl');
@@ -281,52 +280,9 @@
   var modalTechs = document.getElementById('modalTechs');
   var modalOpen = document.getElementById('modalOpen');
 
-  var modalFrameWrap = document.getElementById('modalFrameWrap');
-  var modalViewBtns = document.querySelectorAll('.modal__view-btn');
-  var modalFrameNote = document.getElementById('modalFrameNote');
-  var modalFrameNoteShots = document.getElementById('modalNoteShots');
-  var modalNoteOpen = document.getElementById('modalNoteOpen');
-  var currentView = 'live';
-
-  /* Sites connus comme affichables dans un iframe (sans X-Frame-Options bloquant).
-     Les autres sont tentés en direct ; si le navigateur refuse, on affiche un message. */
-  var FRAMEABLE = ['boutiquemode-site.vercel.app'];
-  function hostOf(url) { try { return new URL(url).hostname; } catch (e) { return ''; } }
-
-  function isFrameableCandidate(project) {
-    return FRAMEABLE.indexOf(hostOf(project && project.url)) !== -1;
-  }
-
-  function setModalNote(show) {
-    if (modalFrameNote) modalFrameNote.hidden = !show;
-  }
-
-  function refreshFrameNote(project) {
-    // On ne montre le message que pour les sites qui refusent vraisemblablement l'affichage intégré.
-    var showNote = !!(project && !isFrameableCandidate(project));
-    setModalNote(showNote);
-    if (modalNoteOpen && project) { modalNoteOpen.href = project.url; }
-  }
-
-  function switchModalView(view, project) {
-    currentView = view;
-    modalViewBtns.forEach(function (b) {
-      b.classList.toggle('is-active', b.getAttribute('data-view') === view);
-    });
-    var live = view === 'live';
-    if (modalFrameWrap) modalFrameWrap.classList.toggle('hidden', !live);
-    if (modalShot) modalShot.classList.toggle('hidden', live);
-    if (modalGallery) modalGallery.classList.toggle('hidden', live || !project || (project.shots && project.shots.length <= 1));
-    if (live && modalFrame) {
-      modalFrame.src = project && project.url ? project.url : 'about:blank';
-      refreshFrameNote(project);
-    }
-  }
-
   function setModalPreview(project) {
     var shots = project.shots || [];
     var current = shots.length ? shots[0] : '';
-    if (modalFrame) { modalFrame.src = project.url || 'about:blank'; }
     if (modalShot) {
       modalShot.innerHTML = current ? '<img src="' + esc(current) + '" alt="Aperçu de ' + esc(project.name) + '">' : '';
     }
@@ -336,31 +292,14 @@
       }).join('');
       modalGallery.querySelectorAll('img').forEach(function (img) {
         img.addEventListener('click', function () {
-          modalShot.querySelector('img').src = img.getAttribute('data-src');
+          var main = modalShot.querySelector('img');
+          if (main) { main.src = img.getAttribute('data-src'); }
           modalGallery.querySelectorAll('img').forEach(function (g) { g.classList.remove('is-active'); });
           img.classList.add('is-active');
         });
       });
     }
     if (modalUrl) { modalUrl.textContent = current || project.url; }
-    switchModalView('live', project);
-  }
-
-  modalViewBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var view = btn.getAttribute('data-view');
-      var idxEl = modal && modal.getAttribute('data-index');
-      var project = projects[parseInt(idxEl, 10)];
-      switchModalView(view, project);
-      if (view === 'shots' && modalFrame) { modalFrame.src = 'about:blank'; }
-    });
-  });
-
-  if (modalFrameNoteShots) {
-    modalFrameNoteShots.addEventListener('click', function () {
-      var viewBtn = document.querySelector('.modal__view-btn[data-view=shots]');
-      if (viewBtn) viewBtn.click();
-    });
   }
 
   function openModal(index) {
@@ -384,7 +323,6 @@
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('no-scroll');
-    if (modalFrame) { modalFrame.src = 'about:blank'; }
   }
 
   var modalClose = document.getElementById('modalClose');

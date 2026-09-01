@@ -24,7 +24,7 @@
   <meta name="twitter:title" content="Mes projets — Cédric Granata">
   <meta name="twitter:description" content="Découvrez les sites web créés par Cédric Granata, concepteur de sites à Six-Fours-les-Plages.">
   <meta name="twitter:image" content="https://portfolio-personnel-tau.vercel.app/assets/og-image.png">
-  <link rel="stylesheet" href="css/styles.css?v=20">
+  <link rel="stylesheet" href="css/styles.css?v=21">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,6 +67,7 @@
           <li><a href="index.html" class="nav__link">Accueil</a></li>
           <li><a href="projets.html" class="nav__link is-active">Projets</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
           <li><a href="apropos.html" class="nav__link">À propos</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
@@ -119,6 +120,7 @@
         <a href="index.html">Accueil</a>
         <a href="projets.html">Projets</a>
         <a href="services.html">Services</a>
+        <a href="tarifs.html">Tarifs</a>
         <a href="apropos.html">À propos</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -132,24 +134,8 @@
       <button class="modal__close" id="modalClose" aria-label="Fermer">&#10005;</button>
       <div class="modal__preview">
         <div class="modal__browser-bar"><span></span><span></span><span></span><span class="modal__browser-url" id="modalUrl"></span></div>
-        <div class="modal__view-toggle" role="group" aria-label="Vue de l'aperçu">
-          <button type="button" class="modal__view-btn is-active" data-view="live">Faire défiler le site</button>
-          <button type="button" class="modal__view-btn" data-view="shots">Screenshots</button>
-        </div>
-        <div class="modal__frame-wrap" id="modalFrameWrap">
-          <iframe id="modalFrame" class="modal__frame" title="Aperçu du site, défilable" loading="lazy"></iframe>
-          <div class="modal__frame-note" id="modalFrameNote" hidden>
-            <div class="modal__note-ico">&#9888;&#65039;</div>
-            <p class="modal__note-title">Ce site s'affiche difficilement ici</p>
-            <p class="modal__note-text" id="modalFrameNoteText">Le site bloque son affichage dans un cadre intégré (sécurité X-Frame-Options). Pour le parcourir librement, ouvrez-le en direct ou explorez les captures d'écran.</p>
-            <div class="modal__note-actions">
-              <button type="button" class="btn btn--primary btn--sm" id="modalNoteShots">Voir les captures</button>
-              <a class="btn btn--ghost btn--sm" id="modalNoteOpen" href="#" target="_blank" rel="noopener">Ouvrir le site &#8599;</a>
-            </div>
-          </div>
-        </div>
-        <div class="modal__shot hidden" id="modalShot"></div>
-        <div class="modal__gallery hidden" id="modalGallery"></div>
+        <div class="modal__shot" id="modalShot"></div>
+        <div class="modal__gallery" id="modalGallery"></div>
       </div>
       <div class="modal__info">
         <p class="section__kicker" id="modalKicker"></p>
@@ -172,6 +158,6 @@
   <script src="js/config.js?v=15" defer></script>
   <script src="js/projects.js?v=20" defer></script>
 
-  <script src="js/main.js?v=18" defer></script>
+  <script src="js/main.js?v=19" defer></script>
 </body>
 </html>
